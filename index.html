@@ -92,7 +92,7 @@ margin: 70px 10;
 </div>
 
 <img src="bladebroslogo-removebg-preview.png"
-style="position:fixed; bottom:0; right:0; width:500px; height:auto; z-index:1000;">
+style="position:fixed; bottom:0; right:0; width:250px; height:auto; z-index:1000;">
 
 <section>
   <h2>Our Services</h2>
@@ -152,7 +152,7 @@ width: 650px;
 
     <footer>
       <h1 style="font-family: 'Tilt Warp', sans-serif; font-size: 20px; color: black;">
-        Website fully coded and managed by Rahim Zanidean
+       
       </h1>
     </footer>
 
@@ -177,3 +177,112 @@ footer {
   padding: 20px 0;
 }
 </style>
+
+<style>
+  body {
+    font-family: 'Tilt Warp', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Sections */
+  .tab-section {
+    display: none;
+    padding: 20px;
+    min-height: 80vh;
+  }
+
+  .tab-section.active {
+    display: block;
+  }
+
+  /* Buttons above footer */
+  .tab-buttons {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .tab-btn {
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    color: white;
+    transition: 0.2s;
+  }
+
+  .tab-btn.inactive {
+    background: grey;
+  }
+
+  .tab-btn.active {
+    background: green;
+  }
+
+    }
+</style>
+
+<body>
+
+  <!-- INFORMATION TAB -->
+  <div id="infoTab" class="tab-section active">
+    <h1></h1>
+    <p>
+     
+    </p>
+
+    <!-- Buttons ABOVE the footer -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="switchTab('infoTab')">Information</button>
+      <button class="tab-btn inactive" onclick="switchTab('pricesTab')">Prices</button>
+    </div>
+
+   
+  </div>
+
+  <!-- PRICES TAB -->
+  <div id="pricesTab" class="tab-section">
+    <h1>Prices</h1>
+
+    <p style="font-size: 22px;">
+      Prices are ~$40-70 for the two workers that come combined.
+    </p>
+
+    <!-- Buttons ABOVE the footer -->
+    <div class="tab-buttons">
+      <button class="tab-btn inactive" onclick="switchTab('infoTab')">Information</button>
+      <button class="tab-btn active" onclick="switchTab('pricesTab')">Prices</button>
+    </div>
+
+   
+  </div>
+
+<script>
+  function switchTab(tabId) {
+    // Hide all sections
+    document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+
+    // Show selected section
+    document.getElementById(tabId).classList.add('active');
+
+    // Update button colors
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+      btn.classList.add('inactive');
+    });
+
+    // Activate correct buttons
+    document.querySelectorAll(`button[onclick="switchTab('${tabId}')"]`)
+      .forEach(btn => {
+        btn.classList.remove('inactive');
+        btn.classList.add('active');
+      });
+
+  
+  }
+</script>
+
+</body>

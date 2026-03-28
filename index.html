@@ -109,16 +109,34 @@ text-align: left;
 
 
 
-<div class="hero-image">
-  <img src="lawn_mower_cutting_grass.jpg" alt="Lawn mower cutting grass">
+<div class="section">
+<p class= "label-text">
+<img src= "lawn_mower_cutting_grass.jpg" class="locked-image">
 </div>
 
 <style>
-  .hero-image {
-    position: absolute;
-    right: 380px;   /* move left */
-    top: 800px;     /* move down into that circled area */
-  }
+.section {
+position: relative;
+width: 100%;
+padding-bottom: 40px
+}
+</style>
+
+<style>
+.label-text {
+font-size: 20px
+margin-bottom: 10px;
+}
+</style>
+
+<style>
+.locked-image {
+position: absolute;
+top: 40px;
+left: 0;
+width: 650px;
+}
+
 
   .hero-image img {
     width: 400px;
